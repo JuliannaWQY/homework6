@@ -23,10 +23,9 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li> 
-				<li><a href="https://github.com/JuliannaWQY" class="bordered" target="_blank">My Github</a></li>
+				<li><a href="https://juliannawqy.github.io/"  class="bordered" target="_blank">The Page</a></li> 
+                <li><a href="https://juliannawqy.wordpress.com" target="_blank">My Other Works</a></li>
+				<li><a href="https://github.com/JuliannaWQY" target="_blank">My Github</a></li>
 			</ul>
 		</nav> 
 
@@ -86,8 +85,8 @@
             radius : '55%',
             center: ['50%', '60%'],
             data:[
-                {value:13.8, name:'Returning Visitor'},
-                {value:86.2, name:'New Visitor'}
+                {value:86.2, name:'New Visitor'},
+                {value:13.8, name:'Returning Visitor'}
             ],
             itemStyle: {
                 emphasis: {
@@ -101,8 +100,8 @@
 };
 myChart.setOption(option)
 </script>
-		<a href="img/img1.png" style="width:520px;height:380px;" rel="lightbox" class="col-2"><img src="img/img1.png" alt="Weebsite main page"></a>
-		<a href="img/img2.png" style="width:520px;height:380px;" rel="lightbox" class="col-2"><img src="img/img2.png" alt="Website work page"></a>
+		<a href="img/img1.png" style="width:520px;height:380px;margin-top:5%;" rel="lightbox" class="col-2"><img src="img/img1.png" alt="Weebsite main page"></a>
+		<a href="img/img2.png" style="width:520px;height:380px;margin-top:5%;" rel="lightbox" class="col-2"><img src="img/img2.png" alt="Website work page"></a>
 
  <div id="main2" style="width:520px;height:380px;color:lightgrey;"></div>
          <script type="text/javascript">
@@ -133,13 +132,13 @@ myChart.setOption(option)
     xAxis : [
         {
             type : 'category',
-            data : ['All the time']
+            data : ['All the time'],
+            show : false
         }
     ],
     yAxis : [
         {
             type : 'value',
-            show : 'false'
         }
     ],
     series : [
@@ -194,8 +193,72 @@ myChart.setOption(option)
 };
 myChart.setOption(option)
 </script>
-				
+
+<div id="main3" style="width:1020px;height:380px;color:lightgrey;"></div>
+         <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main3'));
+            var option = {
+    title: {
+        text: 'Pagrviews per day 23-29 April',
+        backgroundColor:'lightgrey'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#6a7985'
+            }
+        }
+    },
+    legend: {
+        data:['Pageviews'],
+        backgroundColor:'lightgrey',
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['4.23','4.24','4.25','4.26','4.27','4.28','4.29'],
+            show : false
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            show : false
+        }
+    ],
+    series : [
+        {
+            name:'Pageviews',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[35,3,0,4,2,0,53]
+        }
+    ]
+};
+myChart.setOption(option)
+</script>
 			</div>
+
+
+		</section>
+
+        <section class="row">
+			<div class="col-full">
+                <h2>Summary</h2>
+				<p>The general performance of the site during the past week was not very satisified. One problem is that most viewers only visited the main site and leave without clicking around. The format of the site is a "one-page" website, so this doesn't mean the viewers didn't see the content. But the average view time is relatively low, meaning the viewers basically just clicked in and left. 
+				</p>
+				<p>The content could be designed into something more attractive. But considering the purpose of the site: a personal introduction page, the visist volume couldn't be compared with other sites like social media and news pages.
+				</p>
 		</section>
 
 
