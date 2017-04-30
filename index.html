@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="img/favicon.ico"> 
+	<link rel="stylesheet" href="css/vendor/fluidbox.min.css">
+	<link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" src="echarts.min.js"></script>
+	<title>Homework 6 - Julianna Wu</title>
+
+</head>
+<body>
+
+
+	<header>
+
+		<div id="logo-container">
+			<div id="logo"><a href="/">Julianna Wu</a></div>
+			<div id="subtitle">Homework 6</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li> 
+				<li><a href="https://github.com/JuliannaWQY" class="bordered" target="_blank">My Github</a></li>
+			</ul>
+		</nav> 
+
+	</header>
+
+	<div id="content">
+
+		<section class="intro">
+			<h1 style="font: 60px"> Review Anlysis of Julianna's Github <a href="https://juliannawqy.github.io" target="_blank" class="bordered">page</a></h1>
+			<p>
+				Powered by Google Analytics.
+			</p>
+		</section>
+
+		<section class="row">
+			<div class="col-full">
+				<h2>General Information</h2>
+				<p><a href="https://juliannawqy.github.io" target="_blank">The site</a> is launched on 14th Jan, 2017. From March to April, it's been modified and refined into a personal webstie &amp; portfolio of Julianna, by applying a HTML template as the major frame of the website. The last update was on 23rd April.
+				</p>
+				<p>The site was promoted in a small scale on social media for two times: on 23rd and 29th of April.
+				</p>
+			</div>
+		</section>
+
+		<section class="row">
+			<div class="col-full">
+				<h2>Review Anlysis</h2>
+				<p>Total number of visits till 11pm, 30th April: <span style="font-size:50px">65</span> sessions of <span style="font-size:50px">57</span> users. Averagely <span style="font-size:50px">1.49</span> pages/sessions were visited during one session.
+				</p>
+			</div>
+		</section>
+
+		<section class="row" style="color:lightgrey;">
+			<div class="photo-grid" style="color:lightgrey;">
+				 <div id="main1" style="width:520px;height:380px;color:lightgrey;"></div>
+         <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main1'));
+            var option = {title : {
+        text: 'Visitor Types of the Site',
+        x:'center',
+		backgroundColor:'lightgrey'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {d}%"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+		backgroundColor:'lightgrey',
+        data: ['Returning Visitor','New Visitor']
+    },
+    series : [
+        {
+            name: 'Type',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:13.8, name:'Returning Visitor'},
+                {value:86.2, name:'New Visitor'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+myChart.setOption(option)
+</script>
+		<a href="img/img1.png" style="width:520px;height:380px;" rel="lightbox" class="col-2"><img src="img/img1.png" alt="Weebsite main page"></a>
+		<a href="img/img2.png" style="width:520px;height:380px;" rel="lightbox" class="col-2"><img src="img/img2.png" alt="Website work page"></a>
+
+ <div id="main2" style="width:520px;height:380px;color:lightgrey;"></div>
+         <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main2'));
+            var option = {
+				title : {
+        text: 'Countries of Visitor',
+        x:'center',
+		backgroundColor:'lightgrey'
+    },
+    tooltip : {
+        trigger: 'item',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['Hong Kong','China','United Kingdom','United States','Japan','Australia','Canada','Germany'],
+		backgroundColor:'lightgrey',
+		left:'80%',
+		},
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['All the time']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            show : 'false'
+        }
+    ],
+    series : [
+        {
+            name:'Hong Kong',
+            type:'bar',
+            data:[48]
+        },
+        {
+            name:'Canada',
+            type:'bar',
+            stack: '广告',
+            data:[1]
+        },
+        {
+            name:'Australia',
+            type:'bar',
+            stack: '广告',
+            data:[1]
+        },
+        {
+            name:'Germany',
+            type:'bar',
+            stack: '广告',
+            data:[1]
+        },
+        {
+            name:'Japan',
+            type:'bar',
+            stack: '广告',
+            data:[2]
+        },
+        {
+            name:'United Kingdom',
+            type:'bar',
+            stack: '广告',
+            data:[3]
+        },
+        {
+            name:'United States',
+            type:'bar',
+            stack: '广告',
+            data:[3]
+        },
+        {
+            name:'China',
+            type:'bar',
+            stack: '广告',
+            data:[6]
+        },
+    ]
+};
+myChart.setOption(option)
+</script>
+				
+			</div>
+		</section>
+
+
+		<section class="row">
+			<div class="col">
+				<h2>Contact</h2>
+				<p>
+					See me on <a href="https://github.com/JuliannaWQY">github</a>.
+				</p>
+			</div>
+			<div class="col-full">
+				<p>
+					© 2017 - This is a free website template by <a href="http://www.pixelsbyrick.com">Rick Waalders</a>
+				</p>
+		</section>
+ 
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>
+	if (!window.jQuery) 
+	{
+	    document.write('<script src="js/vendor/jquery.1.11.min.js"><\/script>');
+	}
+	</script>
+
+	<script src="js/vendor/jquery.fluidbox.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'YOUR_GOOGLE_ANALYTICS_ID', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</body>
+</html>
+
