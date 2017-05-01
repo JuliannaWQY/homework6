@@ -100,10 +100,98 @@
 };
 myChart.setOption(option)
 </script>
-		<a href="img/img1.png" style="width:520px;height:380px;margin-top:5%;" rel="lightbox" class="col-2"><img src="img/img1.png" alt="Weebsite main page"></a>
-		<a href="img/img2.png" style="width:520px;height:380px;margin-top:5%;" rel="lightbox" class="col-2"><img src="img/img2.png" alt="Website work page"></a>
 
- <div id="main2" style="width:520px;height:380px;color:lightgrey;"></div>
+ <div id="map" style="width:520px;height:380px;color:lightgrey;"></div>
+        <script src="echarts.min.js"></script>
+<script src="china.js"></script>
+<script>
+var chart1 = echarts.init(document.getElementById('map'));
+chart1.setOption(
+     option = {
+    title: {
+        text: 'Viewers inside China',
+        subtext: 'Hong Kong is not included',
+        left: 'center',
+        backgroundColor:'lightgrey'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['Viewers'],
+        backgroundColor:'lightgrey'
+    },
+    visualMap: {
+        min: 0,
+        max: 5,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true,
+        backgroundColor:'lightgrey'
+    },
+    series: [
+        {
+            name: 'Viewers',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value:0},
+                {name: '天津',value: 0},
+                {name: '上海',value: 0},
+                {name: '重庆',value: 0},
+                {name: '河北',value: 0},
+                {name: '河南',value: 0},
+                {name: '云南',value: 2},
+                {name: '辽宁',value: 0},
+                {name: '黑龙江',value: 0},
+                {name: '湖南',value: 0},
+                {name: '安徽',value: 0 },
+                {name: '山东',value: 0 },
+                {name: '新疆',value: 0 },
+                {name: '江苏',value: 0},
+                {name: '浙江',value: 0 },
+                {name: '江西',value: 0},
+                {name: '湖北',value: 1 },
+                {name: '广西',value: 0 },
+                {name: '甘肃',value: 0},
+                {name: '山西',value: 0 },
+                {name: '内蒙古',value: 0 },
+                {name: '陕西',value: 0},
+                {name: '吉林',value: 0},
+                {name: '福建',value: 0 },
+                {name: '贵州',value: 0 },
+                {name: '广东',value: 1},
+                {name: '青海',value: 0},
+                {name: '西藏',value: 0 },
+                {name: '四川',value: 1},
+                {name: '宁夏',value: 0},
+                {name: '海南',value: 0 },
+                {name: '台湾',value: 0},
+                {name: '香港',value: 39 },
+                {name: '澳门',value: 0}
+            ]
+        }
+    ]
+});
+myChart1.setOption(option)
+</script>
+</div>
+		<br>
+        <hr>
+        <div class="row">
+ <div class="col-md-6" id="main2" style="width:500px;height:360px;background-color:lightgrey"></div>
          <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('main2'));
             var option = {
@@ -121,7 +209,7 @@ myChart.setOption(option)
     legend: {
         data:['Hong Kong','China','United Kingdom','United States','Japan','Australia','Canada','Germany'],
 		backgroundColor:'lightgrey',
-		left:'80%',
+		left:'70%',
 		},
     grid: {
         left: '3%',
@@ -194,6 +282,64 @@ myChart.setOption(option)
 myChart.setOption(option)
 </script>
 
+<div class="col-md-6" id="main4" style="width:500px;height:360px;color:lightgrey;"></div>
+         <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main4'));
+            var option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    title : {
+        text: 'Languages of Visitors',
+        x:'center',
+		backgroundColor:'lightgrey'
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['Chinese','English','Not Set'],
+        backgroundColor:'lightgrey'
+    },
+    series: [
+        {
+            name:'Language',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:39, name:'Chinese'},
+                {value:13, name:'English'},
+                {value:1, name:'Not Set'}
+            ]
+        }
+    ]
+};
+myChart.setOption(option)
+</script>
+</div>
+
+<br>
+<hr>
+
 <div id="main3" style="width:1020px;height:380px;color:lightgrey;"></div>
          <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('main3'));
@@ -247,9 +393,6 @@ myChart.setOption(option)
 };
 myChart.setOption(option)
 </script>
-			</div>
-
-
 		</section>
 
         <section class="row">
